@@ -37,7 +37,7 @@
     dest: "{{ nginx_conf_file_path }}"
     owner: kbarret8
     group: "{{ root_group }}"
-    mode: 0644
+    mode: 0664
   notify:
     - reload nginx
 
