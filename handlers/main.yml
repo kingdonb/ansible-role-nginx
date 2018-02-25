@@ -1,10 +1,10 @@
 ---
 - name: restart nginx
-  service: name=nginx state=restarted
+  command: sudo nginx -p /apps/nginx -c nginx.conf -s restart
 
 - name: validate nginx configuration
-  command: nginx -t -c /etc/nginx/nginx.conf
+  command: nginx -t -c /apps/nginx/nginx.conf
   changed_when: False
 
 - name: reload nginx
-  service: name=nginx state=reloaded
+  command: sudo nginx -p /apps/nginx -c nginx.conf -s reload
