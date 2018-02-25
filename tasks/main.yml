@@ -35,11 +35,9 @@
   template:
     src: "{{ nginx_conf_template }}"
     dest: "{{ nginx_conf_file_path }}"
-    owner: root
+    owner: kbarret8
     group: "{{ root_group }}"
     mode: 0644
   notify:
     - reload nginx
 
-- name: Ensure nginx is started and enabled to start at boot.
-  service: name=nginx state=started enabled=yes
